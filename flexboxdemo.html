@@ -1,0 +1,168 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>Demo flex</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="flexboxdemo.css">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/styles/default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.2/styles/atom-one-dark.min.css">
+</head>
+
+<body>
+    <div class="other">
+        <p id="centerme">&#10024; Démo flexbox &#10024;</p>
+    </div>
+    <div class="parent a">
+        <div class="enfant b">
+            <p>
+                allo
+            </p>
+        </div>
+        <div class="enfant c">
+            <p>
+                comment
+            </p>
+        </div>
+        <div class="enfant d">
+            <p>
+                ça va
+            </p>
+        </div>
+    </div>
+    <div class="other">
+        <div class="pieces-container">
+            <p>&#10024; Paramètres du flex &#10024;</p>
+            <div class="piece">
+                <p class="piece_name">
+                    PARENT
+                </p>
+                <div class="controllers-row">
+                    <div class="control">
+                        <p class="lil">
+                            display-flex
+                        </p>
+                        <div class="control_unit_container">
+                            <div class="control_unit">
+                                <p class="text_a">Fermé</p>
+                                <div class="tog-a">
+                                    <!-- toggle thingy -->
+                                    <input type="checkbox" id="flex_parent" />
+                                    <label for="flex_parent">Toggle</label>
+                                    <!-- src: https://codepen.io/mburnette/pen/LxNxNg -->
+                                </div>
+                                <p class="text_b">Allumé</p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="control">
+                        <p class="lil">
+                            flex-direction
+                        </p>
+                        <div class="control_unit_container">
+                            <div class="control_unit">
+                                <p class="text_a">Rangée</p>
+                                <div class="tog-a">
+                                    <!-- toggle thingy -->
+                                    <input type="checkbox" id="flex_parent2"  />
+                                    <label for="flex_parent2">Toggle</label>
+                                    <!-- src: https://codepen.io/mburnette/pen/LxNxNg -->
+                                </div>
+                                <p class="text_b">Colonne</p>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="controllers-row">
+                    <div class="control">
+                        <p class="lil">
+                            Alignement de ses enfants
+                        </p>
+                        <div class="control_unit_container">
+                            <div class="control_unit tog-b">
+                                <label class="radiu">
+                                    <input type="radio" id="parent-left" name="alignement" value="parent-left" checked >
+                                    <p class="text_b">Gauche</p>
+                                </label>
+                                <label class="radiu">
+                                    <input type="radio" id="parent-center" name="alignement" value="parent-center" >
+                                    <p class="text_b">Centre</p>
+                                </label>
+                                <label class="radiu">
+                                    <input type="radio" id="parent-right" name="alignement" value="parent-right" >
+                                    <p class="text_b">Droite</p>
+                                </label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="control">
+                        <p class="lil">
+                            Taille du parent
+                        </p>
+                        <div class="control_unit_container">
+                            <div class="control_unit tog-b">
+                                <label class="radiu">
+                                    <input type="radio" id="onehunna" name="size" value="onehunna" checked >
+                                    <p class="text_b">100%</p>
+                                </label>
+                                <label class="radiu">
+                                    <input type="radio" id="seventyfive" name="size" value="seventyfive" >
+                                    <p class="text_b">75%</p>
+                                </label>
+                                <label class="radiu">
+                                    <input type="radio" id="fitty" name="size" value="fitty" >
+                                    <p class="text_b">50%</p>
+                                </label>
+
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="controllers-row">
+                    <div class="buttony" onclick="generate()">Générer</div>
+                </div>
+            </div>
+
+        </div>
+        <div class="output">
+            <p>&#10024; Code résultant &#10024;</p>
+            <pre><code id="code-result" class="language-css">
+/* ton code apparaitra ici */
+.parent {
+    ;
+}
+
+            </code></pre>
+           
+                
+
+
+
+
+          
+
+
+        </div>
+    </div>
+    <!-- highlighting thingy -->
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.4.0/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+
+    <!-- actual script: todo -->
+    <script>
+        function generate() {
+            // alert("Yo");
+            ;
+        }
+    </script>
+</body>
+
+</html>
