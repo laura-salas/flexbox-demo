@@ -13,6 +13,7 @@
     <div class="other">
         <p id="centerme">&#10024; Démo flexbox &#10024;</p>
     </div>
+    <div id="arrow-x"></div>
     <div class="parent a">
         <div class="enfant b">
             <p>
@@ -40,36 +41,36 @@
                 <div class="controllers-row">
                     <div class="control">
                         <p class="lil">
-                            display-flex
+                            Arrangement
                         </p>
                         <div class="control_unit_container">
                             <div class="control_unit">
-                                <p class="text_a">Fermé</p>
+                                <p class="text_a">Bloc (défaut)</p>
                                 <div class="tog-a">
                                     <!-- toggle thingy -->
-                                    <input type="checkbox" id="flex_parent" />
+                                    <input type="checkbox" id="flex_parent" / onclick=" toggle('flex_parent', 'display', 'flex', 'block')">
                                     <label for="flex_parent">Toggle</label>
                                     <!-- src: https://codepen.io/mburnette/pen/LxNxNg -->
                                 </div>
-                                <p class="text_b">Allumé</p>
+                                <p class="text_b">Flexible</p>
                             </div>
 
                         </div>
                     </div>
                     <div class="control">
                         <p class="lil">
-                            flex-direction
+                            Direction du flex
                         </p>
                         <div class="control_unit_container">
                             <div class="control_unit">
-                                <p class="text_a">Rangée</p>
+                                <p class="text_a">Traverser les <u>colonnes</u></p>
                                 <div class="tog-a">
                                     <!-- toggle thingy -->
-                                    <input type="checkbox" id="flex_parent2"  />
-                                    <label for="flex_parent2">Toggle</label>
+                                    <input type="checkbox" id="direction_parent" onclick="toggle('direction_parent', 'flex-direction', 'row', 'column')" checked disabled/>
+                                    <label for="direction_parent">Toggle</label>
                                     <!-- src: https://codepen.io/mburnette/pen/LxNxNg -->
                                 </div>
-                                <p class="text_b">Colonne</p>
+                                <p class="text_b">Traverser les <u>rangées</u></p>
                             </div>
 
                         </div>
@@ -79,21 +80,21 @@
                 <div class="controllers-row">
                     <div class="control">
                         <p class="lil">
-                            Alignement de ses enfants
+                            Justifier
                         </p>
                         <div class="control_unit_container">
                             <div class="control_unit tog-b">
-                                <label class="radiu">
-                                    <input type="radio" id="parent-left" name="alignement" value="parent-left" checked >
-                                    <p class="text_b">Gauche</p>
+                                <label class="radiu" >
+                                    <input type="radio" id="parent-left" name="alignement" value="flex-start"  onclick="radio('parent-left', 'justify-content')" checked disabled>
+                                    <p class="text_b">au début</p>
                                 </label>
                                 <label class="radiu">
-                                    <input type="radio" id="parent-center" name="alignement" value="parent-center" >
-                                    <p class="text_b">Centre</p>
+                                    <input type="radio" id="parent-center" name="alignement" value="center" onclick="radio('parent-center', 'justify-content')" disabled>
+                                    <p class="text_b">au milieu/centré</p>
                                 </label>
                                 <label class="radiu">
-                                    <input type="radio" id="parent-right" name="alignement" value="parent-right" >
-                                    <p class="text_b">Droite</p>
+                                    <input type="radio" id="parent-right" name="alignement" value="flex-end" onclick="radio('parent-right', 'justify-content')" disabled>
+                                    <p class="text_b">vers la fin</p>
                                 </label>
 
                             </div>
@@ -107,16 +108,16 @@
                         <div class="control_unit_container">
                             <div class="control_unit tog-b">
                                 <label class="radiu">
-                                    <input type="radio" id="onehunna" name="size" value="onehunna" checked >
+                                    <input type="radio" id="parent-onehunna" name="size" value="100%" checked onclick="radio('parent-onehunna', 'width-height')" disabled>
                                     <p class="text_b">100%</p>
                                 </label>
                                 <label class="radiu">
-                                    <input type="radio" id="seventyfive" name="size" value="seventyfive" >
+                                    <input type="radio" id="parent-seventyfive" name="size" value="75%" onclick="radio('parent-seventyfive', 'width-height')" disabled>
                                     <p class="text_b">75%</p>
                                 </label>
                                 <label class="radiu">
-                                    <input type="radio" id="fitty" name="size" value="fitty" >
-                                    <p class="text_b">50%</p>
+                                    <input type="radio" id="parent-twenifaiv" name="size" value="25%" onclick="radio('parent-twenifaiv', 'width-height')" disabled>
+                                    <p class="text_b">25%</p>
                                 </label>
 
                             </div>
@@ -124,8 +125,9 @@
                         </div>
                     </div>
                 </div>
+               
                 <div class="controllers-row">
-                    <div class="buttony" onclick="generate()">Générer</div>
+                    <div class="buttony" onclick="restart()">Réinitialiser</div>
                 </div>
             </div>
 
@@ -134,20 +136,7 @@
             <p>&#10024; Code résultant &#10024;</p>
             <pre><code id="code-result" class="language-css">
 /* ton code apparaitra ici */
-.parent {
-    ;
-}
-
             </code></pre>
-           
-                
-
-
-
-
-          
-
-
         </div>
     </div>
     <!-- highlighting thingy -->
@@ -156,13 +145,47 @@
         hljs.highlightAll();
     </script>
 
-    <!-- actual script: todo -->
-    <script>
-        function generate() {
-            // alert("Yo");
-            ;
-        }
+    <script src="flexboxdemo.js">
     </script>
+
+<!-- <p class="piece_name">
+    ENFANTS
+</p>
+<div class="controllers-row">
+    <div class="control">
+        <p class="lil">
+            Arrangement
+        </p>
+        <div class="control_unit_container">
+            <div class="control_unit">
+                <p class="text_a">Bloc (défaut)</p>
+                <div class="tog-a">
+                    <input type="checkbox" id="flex_enfant" / onclick=" toggle('flex_enfant', 'display', 'flex', 'block')">
+                    <label for="flex_enfant">Toggle</label>
+                </div>
+                <p class="text_b">Flexible</p>
+            </div>
+
+        </div>
+    </div>
+    <div class="control">
+        <p class="lil">
+            Direction du flex
+        </p>
+        <div class="control_unit_container">
+            <div class="control_unit">
+                <p class="text_a">Traverser les <u>colonnes</u></p>
+                <div class="tog-a">
+                    <input type="checkbox" id="direction_enfant" onclick="toggle('direction_enfant', 'flex-direction', 'row', 'column')" checked disabled/>
+                    <label for="direction_enfant">Toggle</label>
+                </div>
+                <p class="text_b">Traverser les <u>rangées</u></p>
+            </div>
+
+        </div>
+    </div>
+
+</div> -->
 </body>
 
 </html>

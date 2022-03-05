@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inconsolata&family=League+Gothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;400&family=League+Gothic&display=swap');
 
 * {
     box-sizing: border-box;
@@ -136,16 +136,23 @@ div {
     color: white;
     height: 300px;
     padding: 2px;
+    transition: 0.35s;
 }
-
+.enfant {
+    transition: 0.35s;
+}
+.parent > * {
+    transition: 0.35s;
+}
 .enfant>p {
     padding: 4px;
     text-align: center;
 }
 
 .a {
-    background: rgb(136, 132, 185);
+    background: rgba(18, 12, 110, 1);
     background: linear-gradient(90deg, rgba(136, 132, 185, 1) 0%, rgba(18, 12, 110, 1) 100%);
+    
 }
 
 .c {
@@ -233,7 +240,6 @@ div {
     background: rgb(150, 156, 255);
     background: linear-gradient(180deg, rgba(150, 156, 255, 1) 0%, rgba(81, 84, 143, 1) 100%);
     color: rgb(17, 63, 63);
-
 }
 
 .other #centerme {
@@ -268,4 +274,23 @@ div {
 
 .output {
     border-radius: 10px;
+}
+
+code#code-result {
+    border-radius: 10px !important;
+}
+.text_a, .text_b {
+    font-weight: 200;
+    font-size: 0.7em;
+}
+
+#arrow-x {
+    height: 20px;
+    width: 100%;
+    background-image: url("horarrow.svg");
+    background-repeat: no-repeat;
+    opacity: 80%;
+    background-position: center;
+    margin-bottom: 10px;
+    transition: 0.35s;
 }
